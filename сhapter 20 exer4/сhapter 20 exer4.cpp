@@ -23,7 +23,10 @@ int main()
     cout << "enter the length of the triangles:" << endl;
     cin >> x >> y >> z;
 
-    if (x == y && y == z) {
+     if (x > y + z || y > x + z || z > x + y) {
+     cout << "its not a triangle";
+    }
+    else if (x == y && y == z) {
         cout << "it's an equilateral triangle";
     }
     else if (pow(x, 2) == pow(y, 2) + pow(z, 2) || (pow(y, 2) == pow(x, 2) + pow(z, 2) || pow(z, 2) == pow(x, 2) + pow(y, 2))) {
@@ -33,7 +36,7 @@ int main()
         cout << "its not a special triangle";
     }
     else {
-        cout << "invalid input" << endl;
+        cout << "it's not a special triangle" << endl;
     }
     return 0;
 }
